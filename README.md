@@ -16,7 +16,7 @@ git clone https://github.com/JAIMEjun10r/Teste_Tenda
 Entre no diretório do projeto
 
 ```bash
-  cd pasta_que_você_escolhei
+  cd pasta_que_você_escolheu
 ```
 
 Para instalar as dependências, digite:
