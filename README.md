@@ -1,6 +1,6 @@
 # Teste Tenda(E2E) 
 - O site de testes ficou caindo e, posteriormente, voltava 3 horas depois. E o tentar continuar, caía de novo. Fiz até onde foi possível
-- com essa situação
+- com essa situação. Fiz com que os testes fossem independentes entre si
 ## Pré-requisitos
 - Este projeto utiliza da versão v20.10.0 do Node.js
 - Caso não tenha o Node.js, baixe-o na mesma versão do projeto ou superior
@@ -10,13 +10,13 @@
 Clone o projeto para uma pasta da sua escolha
 
 ```bash
-git clone https://gitlabvrglass.clientesplss.com.br/qa/automacao_principal.git
+git clone https://github.com/JAIMEjun10r/Teste_Tenda
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd automacao_principal
+  cd pasta_que_você_escolhei
 ```
 
 Para instalar as dependências, digite:
@@ -26,18 +26,8 @@ Para instalar as dependências, digite:
 
 ## Rodando os testes
 
-Hpa duas formas de rodar os testes:
-
-Primeira forma:
-
 ```bash
   npx cypress open
 ```
 
-Segunda forma:
-
-Você pode usar o arquivo de shell já na pasta e digitar o seguinte comando no terminal:
-
-```bash
-  ./run.sh
-```
+- Os testes são independentes entre si
