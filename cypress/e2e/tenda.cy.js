@@ -122,6 +122,7 @@ describe('template spec', () => {
       .click()
     cy.get('.content-checkout-tenda-variation > .action-area > :nth-child(2)')
       .click()
+    // daqui em diante o site parou de funcionar mais uma vez e meu usuário bugou novamente
     
 
 
