@@ -122,14 +122,7 @@ describe('template spec', () => {
       .click()
     cy.get('.content-checkout-tenda-variation > .action-area > :nth-child(2)')
       .click()
-    // cy.get('.title-checkout-seller-variation')
-    //   .should('be.visible')
-    //   .and('have.text', 'Pagamento com boleto')
-    // cy.contains('.action-area > .btn-primary', 'Pagar com boleto')
-    //   .click()
-    // cy.contains('Seu pedido foi realizado com sucesso :)')
-    //   .should('be.visible', {timeout: 14000})
-    //não consigo fazer teste daqui em diante pq o site ficou fora do ar e não consigo fazer ele selecionar a data
+    
 
 
   });
