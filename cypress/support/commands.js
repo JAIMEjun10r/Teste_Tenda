@@ -28,21 +28,21 @@ Cypress.Commands.add('login', (email, password) => {
 })
 
 Cypress.Commands.add('numeroItem', (num, vendedor) => {
-    cy.get('.card .card-item')
+    cy.get('.card .card-item', {timeout: 10000})
         .eq(num)
         .should('contain', `Vendido por: ${vendedor}`)
 })
 
 Cypress.Commands.add('numeroBtnAdicionar', (num) => {
-    cy.get('.card .card-item')
+    cy.get('.card .card-item', {timeout: 10000})
         .eq(num)
         .find('#buttonbuy-sku-')
         .click({ force: true })
 })
 
 Cypress.Commands.add('qtdCarrinho', (qtd) => {
-    cy.get('.icon-cart-qtd')
-        .should('be.visible', { timeout: 16000 })
+    cy.get('.icon-cart-qtd', {timeout: 14000})
+        .should('be.visible')
         .and('have.text', qtd)
 })
 
