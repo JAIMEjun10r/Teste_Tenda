@@ -1,11 +1,11 @@
 # Teste Tenda(E2E) 
-- O site de testes ficou caindo e, posteriormente, voltava 3 horas depois. E o tentar continuar, caía de novo. Fiz até onde foi possível...
-- com essa situação. Fiz com que os testes fossem independentes entre si
+- O site de testes ficou caindo e, posteriormente, voltava 3 horas depois. E o tentar continuar, caía de novo. Fiz até onde foi possível com essa situação. Fiz com que os testes fossem independentes entre si
 - Subi o arquivo Cypress.env.json apenas para saberem qual usuário e senha usei.
 
 ## Pré-requisitos
 - Este projeto utiliza da versão v20.10.0 do Node.js
 - Caso não tenha o Node.js, baixe-o na mesma versão do projeto ou superior
+- Este projeto usa a versão 12.17.0 do cypress
 
 ## Rodando locamente
 
