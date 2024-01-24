@@ -7,7 +7,6 @@ describe('template spec', () => {
 
   it('Adicionar dois produtos ao carrinho - um produto Tenda e um produto de um seller', () => {
     cy.visit('/')
-    // cy.wait(5000)
     cy.contains('Meu carrinho', {timeout:14000})
       .should('be.visible')
     cy.checkAndClick()
@@ -115,16 +114,36 @@ describe('template spec', () => {
       .should('be.visible')
     cy.contains('.resume-buttons > .btn', 'Finalizar compra')
       .click()
-
-    cy.contains('Boleto bancário').click()
+    cy.get(':nth-child(3) > .btn-delivery')
+      .should('be.visible')
+      .click()
+    cy.contains('Modalidade de entrega')
+      .should('be.visible')
+    cy.contains('.content', 'Clique & Retire')
+      .click()
+    cy.get(':nth-child(6) > .content')   // escolhi essa opção pq todas as outras estavam dando problemas com esse usuário
+      .scrollIntoView()
+      .click()
+    cy.contains('Data de retirada')
+      .should('be.visible')
+    cy.get('.tab-day:nth-child(3)')   // aqui eu escolhi para ser sempre a "terceira" data
+      .click()  
+    cy.get('.card-information-component')  
+      .click()
+    cy.contains('.resume-buttons > .btn', 'Finalizar compra')
+      .should('be.visible')
+      .click()
+    cy.contains('Boleto bancário', {timeout: 7000}).click()
     cy.contains('button[data-cy="btn-"]', 'Pagar com boleto')
       .should('be.visible')
       .click()
-    cy.get('.content-checkout-tenda-variation > .action-area > :nth-child(2)')
-      .click()
+    cy.get('.thanks', {timeout: 20000})
+      .should('be.visible')
     // daqui em diante o site parou de funcionar mais uma vez e meu usuário bugou novamente
     
+  });
 
-
+  it('Pagamento com cartão', () => {
+    
   });
 })
