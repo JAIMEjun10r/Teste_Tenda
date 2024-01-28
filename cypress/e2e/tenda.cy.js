@@ -16,7 +16,7 @@ describe('Testes Tenda', () => {
   }
   
 
-  it('Adicionar dois produtos ao carrinho - um produto Tenda e um produto de um seller', () => {
+  it.only('Adicionar dois produtos ao carrinho - um produto Tenda e um produto de um seller', () => {
     cy.visit('/')
     cy.contains('Meu carrinho', { timeout: 14000 })
       .should('be.visible')
@@ -26,14 +26,12 @@ describe('Testes Tenda', () => {
       .click({ force: true })
     cy.contains('h1', 'Todos', { timeout: 14000 })
       .should('be.visible')
-    cy.numeroItem(0, 'Tenda')            // esse command usa a posição do produto 
-    cy.numeroBtnAdicionar(0)    // esse usa a posição do botão
+    cy.posicaoProduto(0, 'Tenda')            // esse command usa a posição do produto 
     cy.qtdCarrinho(1)
     // // incluindo o segundo produto de um seller
     cy.get('#searchbarComponent').type('produto seller')
     cy.contains('Buscar').click()
-    cy.numeroItem(4, 'Benedito ME')
-    cy.numeroBtnAdicionar(4)
+    cy.posicaoProduto(4, 'Benedito ME')
     cy.qtdCarrinho(2)
     cy.get('.BlockTittleCartComponent > .title').scrollIntoView()
 
@@ -50,20 +48,18 @@ describe('Testes Tenda', () => {
       .click({ force: true })
     cy.contains('h1', 'Todos', { timeout: 14000 })
       .should('be.visible')
-    cy.numeroItem(0, 'Tenda')            // esse command usa a posição do produto 
-    cy.numeroBtnAdicionar(0)    // esse usa a posição do botão
+    cy.posicaoProduto(0, 'Tenda')            // esse command usa a posição do produto 
     cy.qtdCarrinho(1)
-    // // incluindo o segundo produto de um seller
+    // incluindo o segundo produto de um seller
     cy.get('#searchbarComponent').type('produto seller')
     cy.contains('Buscar').click()
-    cy.numeroItem(4, 'Benedito ME')
-    cy.numeroBtnAdicionar(4)
+    cy.posicaoProduto(4, 'Benedito ME')
     cy.qtdCarrinho(2)
     cy.get('.BlockTittleCartComponent > .title').scrollIntoView()
     cy.get('div.box-quantity > :nth-child(3)').first().click({ force: true })
     cy.wait(3000)     //provisório, pois é necessário esperar que um item seja removido para então remover o outro
     cy.get('div.box-quantity > :nth-child(3)').last().click({ force: true })
-    // cy.qtdCarrinho(4)
+    cy.qtdCarrinho(4)
 
   });
 
@@ -77,15 +73,12 @@ describe('Testes Tenda', () => {
       .click({ force: true })
     cy.contains('h1', 'Todos', { timeout: 14000 })
       .should('be.visible')
-    cy.numeroItem(0, 'Tenda')            // esse command usa a posição do produto 
-    cy.numeroBtnAdicionar(0)    // esse usa a posição do botão
+    cy.posicaoProduto(0, 'Tenda')            // esse command usa a posição do produto 
     cy.qtdCarrinho(1)
-    // // incluindo o segundo produto de um seller
+    //incluindo o segundo produto de um seller
     cy.get('#searchbarComponent').type('produto seller')
     cy.contains('Buscar').click()
-    cy.wait(5000)     //esse cy.wait seria apenas provisório, pois iria usar o intercept para puxar a api até carregar
-    cy.numeroItem(4, 'Benedito ME')
-    cy.numeroBtnAdicionar(4)
+    cy.posicaoProduto(4, 'Benedito ME')
     cy.qtdCarrinho(2)
     // aumentando a quantidade de itens
     cy.get('div.box-quantity > :nth-child(3)').first().click({ force: true })
@@ -110,8 +103,7 @@ describe('Testes Tenda', () => {
       .click({ force: true })
     cy.contains('h1', 'Todos', { timeout: 14000 })
       .should('be.visible')
-    cy.numeroItem(0, 'Tenda')            // esse command usa a posição do produto 
-    cy.numeroBtnAdicionar(0)    // esse usa a posição do botão
+    cy.posicaoProduto(0, 'Tenda')            // esse command usa a posição do produto 
     cy.qtdCarrinho(1)
     // indo para o carrinho
     cy.contains('button[data-cy="btn-"]', 'Ver carrinho').click()
@@ -170,8 +162,7 @@ describe('Testes Tenda', () => {
       .click({ force: true })
     cy.contains('h1', 'Todos', { timeout: 14000 })
       .should('be.visible')
-    cy.numeroItem(4, 'Tenda')            // esse command usa a posição do produto 
-    cy.numeroBtnAdicionar(4)    // esse usa a posição do botão
+    cy.posicaoProduto(4, 'Tenda')            // esse command usa a posição do produto 
     cy.qtdCarrinho(1)
     // indo para o carrinho
     cy.contains('button[data-cy="btn-"]', 'Ver carrinho').click()

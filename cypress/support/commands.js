@@ -8,11 +8,6 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-Cypress.Commands.add('escolherNumero', () => {
-    return Math.floor(Math.random() * 10);
-});
-
-
 Cypress.Commands.add('login', (email, password) => {
     cy.session([email, password], () => {
         cy.visit('/')
@@ -27,18 +22,14 @@ Cypress.Commands.add('login', (email, password) => {
     })
 })
 
-Cypress.Commands.add('numeroItem', (num, vendedor) => {
+Cypress.Commands.add('posicaoProduto', (num, vendedor) => {
     cy.get('.card .card-item', {timeout: 10000})
         .eq(num)
         .should('contain', `Vendido por: ${vendedor}`)
-})
-
-Cypress.Commands.add('numeroBtnAdicionar', (num) => {
-    cy.get('.card .card-item', {timeout: 10000})
-        .eq(num)
         .find('#buttonbuy-sku-')
         .click({ force: true })
 })
+
 
 Cypress.Commands.add('qtdCarrinho', (qtd) => {
     cy.get('.icon-cart-qtd', {timeout: 14000})
