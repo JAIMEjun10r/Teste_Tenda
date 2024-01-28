@@ -16,7 +16,7 @@ describe('Testes Tenda', () => {
   }
   
 
-  it.only('Adicionar dois produtos ao carrinho - um produto Tenda e um produto de um seller', () => {
+  it('Adicionar dois produtos ao carrinho - um produto Tenda e um produto de um seller', () => {
     cy.visit('/')
     cy.contains('Meu carrinho', { timeout: 14000 })
       .should('be.visible')
