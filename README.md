@@ -1,5 +1,5 @@
 # Teste Tenda(E2E) 
-- O site de testes ficou caindo e, posteriormente, voltava 3 horas depois. E o tentar continuar, caía de novo. Fiz até onde foi possível com essa situação. Fiz com que os testes fossem independentes entre si
+- O site de testes ficou caindo e, posteriormente, voltava 3 horas depois. E o tentar continuar, caía de novo. Mesmo com todos esses obstáculos, consegui finalizar. Fiz com que os testes fossem independentes entre si
 - Subi o arquivo Cypress.env.json apenas para saberem qual usuário e senha usei.
 
 ## Pré-requisitos
